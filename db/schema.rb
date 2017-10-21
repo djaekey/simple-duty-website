@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20171021060722) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "duty_schedules", force: :cascade do |t|
     t.date "date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171021060722) do
 
   create_table "problem_reports", force: :cascade do |t|
     t.datetime "date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "computer_number"
     t.text "details"
     t.string "status"
@@ -38,4 +41,6 @@ ActiveRecord::Schema.define(version: 20171021060722) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "duty_schedules", "users"
+  add_foreign_key "problem_reports", "users"
 end
