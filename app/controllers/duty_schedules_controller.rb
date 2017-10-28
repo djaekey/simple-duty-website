@@ -1,0 +1,2 @@
+class DutySchedulesController < ApplicationController
+end
