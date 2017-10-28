@@ -1,0 +1,11 @@
+<h1>Submit New Problem Report</h1>
+
+<%= form_for @problem_reports do |f| %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name %><br>
+  <%= f.label :computer_number %>
+  <%= f.text_field :computer_number %><br>
+  <%= f.label :details %>
+  <%= f.text_field :details %><br>
+  <%= f.submit "Create" %>
+<% end %>

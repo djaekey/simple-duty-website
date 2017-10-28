@@ -1,0 +1,24 @@
+<h1>Problem Reports</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Supervisor</th>
+    <th>Computer Number</th>
+    <th>Details</th>
+    <th>Status</th>
+  </tr>
+
+  <% @problem_reports.each do |p| %>
+    <tr>
+      <td><%= p.date.localtime %></td>
+      <td><%= p.user_id %></td>
+      <td><%= p.computer_number %></td>
+      <td><%= p.details %></td>
+      <td><%= p.status %></td>
+      <td><%= link_to 'Show', p %></td>
+      <td><%= link_to 'Edit', edit_problem_report_path(p) %></td>
+
+    </tr>
+  <% end %>
+</table>
