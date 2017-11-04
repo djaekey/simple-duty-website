@@ -1,0 +1,22 @@
+<h1><%= @problem_report.id %></h1>
+
+<table>
+	<tr>
+	    <th>Date</th>
+	    <th>Computer Number</th>
+	    <th>Details</th>
+	    <th>Status</th>
+	  </tr>
+
+	<tr>
+      <td><%= @problem_report.date %></td>
+      <td><%= @problem_report.computer_number %></td>
+      <td><%= @problem_report.details %></td>
+      <td><%= @problem_report.status %></td>
+    </tr>
+</table>
+
+<p>
+	<%= link_to 'Home', problem_reports_path %> &nbsp;
+	<%= link_to 'Edit', edit_problem_report_path(@problem_report.user_id) %>
+</p>

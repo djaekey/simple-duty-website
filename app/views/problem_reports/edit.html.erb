@@ -1,1 +1,11 @@
 <h1>Edit Problem Report <%= @problem_reports.id %></h1>
+
+<%= form_for @problem_reports do |f| %>
+  <%= f.label :computer_number %>
+  <%= f.text_field :computer_number %><br>
+  <%= f.label :details %>
+  <%= f.text_field :details %><br>
+  <%= f.label :status %>
+  <%= f.select :status, ['Broken','Fixed'] %><br>
+  <%= f.submit "Edit" %>
+<% end %>

@@ -1,0 +1,35 @@
+<h1><%= @user.name %></h1>
+
+<table>
+	<tr>
+    <th>Name</th>
+  </tr>
+
+	<tr>
+      <td><%= @user.name %></td>
+    </tr>
+</table>
+
+<h1>Problem Reports</h1>
+
+<table>
+	<tr>
+    <th>Date</th>
+    <th>Computer Number</th>
+    <th>Details</th>
+    <th>Status</th>
+  </tr>
+
+  <% @problem_reports.each do |p| %>
+	<tr>
+      <td><%= p.date %></td>
+      <td><%= p.computer_number %></td>
+      <td><%= p.details %></td>
+      <td><%= p.status %></td>
+    </tr>
+   <% end %> 
+</table>
+
+<p>
+	<%= link_to 'Home', users_path %> &nbsp;
+</p>

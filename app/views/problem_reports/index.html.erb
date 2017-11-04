@@ -18,7 +18,9 @@
       <td><%= p.status %></td>
       <td><%= link_to 'Show', p %></td>
       <td><%= link_to 'Edit', edit_problem_report_path(p) %></td>
-
+      <td><%= link_to 'Delete', problem_report_path(id: p.id), method: :delete %></td>
     </tr>
   <% end %>
 </table>
+
+<p><%= link_to 'Submit new problem report', new_problem_report_path %></p>
