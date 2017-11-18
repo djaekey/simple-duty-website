@@ -1,4 +1,3 @@
 class User < ApplicationRecord
-	has_many :problem_reports
-	has_many :duty_schedules
+	has_secure_password
 end

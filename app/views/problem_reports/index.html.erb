@@ -1,3 +1,9 @@
+<% if session.include?(:user_id) %>
+  <h1>Hi, <%= User.find(session[:user_id]).username %>!</h1>
+<% else %>
+  <h1>Hi, guest!</h1>
+<% end %>
+
 <h1>Problem Reports</h1>
 
 <table>
@@ -24,3 +30,6 @@
 </table>
 
 <p><%= link_to 'Submit new problem report', new_problem_report_path %></p>
+
+
+<p><%= link_to 'Logout', logout_path, method: :delete %></p>
